@@ -139,16 +139,16 @@ body.light .nav { background: rgba(240,240,240,0.7); }
 body.light .nav.scrolled { background: rgba(236,236,236,0.95); border-bottom-color: var(--line); }
 
 .nav-inner {
-  max-width: var(--max); margin: 0 auto; padding: 13px var(--pad);
+  max-width: var(--max); margin: 0 auto; padding: 8px var(--pad);
   display: flex; align-items: center; gap: 16px;
 }
 .brand { display: flex; align-items: center; gap: 12px; flex: 1; }
 .brand-logo {
-  height: 44px; width: auto; display: block;
+  height: 64px; width: auto; display: block;
   transition: opacity .2s;
 }
 .brand-logo:hover { opacity: 0.85; }
-.brand-logo-footer { height: 56px; }
+.brand-logo-footer { height: 110px; }
 .nav-links { display: flex; gap: 28px; align-items: center; }
 .nav-links a {
   font-family: 'Barlow Condensed', sans-serif; font-weight: 500;
