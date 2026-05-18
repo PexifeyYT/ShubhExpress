@@ -57,6 +57,7 @@ function Nav({ theme, setTheme }) {
           <a href="#services" className={active === 'services' ? 'nav-active' : ''}>Services</a>
           <a href="#terminals" className={active === 'terminals' ? 'nav-active' : ''}>Terminals</a>
           <a href="#contact" className={active === 'contact' ? 'nav-active' : ''}>Contact</a>
+          <a href="privacy-policy.html" target="_blank">Privacy</a>
           <a href="#contact" className="nav-cta">Request Quote</a>
         </div>
       </div>
