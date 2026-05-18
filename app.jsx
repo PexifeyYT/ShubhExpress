@@ -26,6 +26,14 @@ const Icon = ({ name, size = 22 }) => {
 };
 
 /* ----- Nav ----- */
+const NAV_SECTIONS = ['about', 'services', 'terminals', 'contact', 'privacy'];
+
+function scrollTo(id) {
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: 'smooth' });
+  history.pushState(null, '', '/' + id);
+}
+
 function Nav({ theme, setTheme }) {
   const [scrolled, setScrolled] = useState(false);
   const [active, setActive] = useState('');
@@ -37,28 +45,45 @@ function Nav({ theme, setTheme }) {
   }, []);
 
   useEffect(() => {
-    const ids = ['about', 'services', 'terminals', 'contact'];
     const io = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) setActive(e.target.id); });
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          setActive(e.target.id);
+          history.replaceState(null, '', '/' + e.target.id);
+        }
+      });
     }, { rootMargin: '-25% 0px -65% 0px' });
-    ids.forEach(id => { const el = document.getElementById(id); if (el) io.observe(el); });
+    NAV_SECTIONS.forEach(id => { const el = document.getElementById(id); if (el) io.observe(el); });
     return () => io.disconnect();
   }, []);
+
+  useEffect(() => {
+    const path = window.location.pathname.replace('/', '').replace('.html', '') || '';
+    if (path && path !== 'index') {
+      const el = document.getElementById(path);
+      if (el) setTimeout(() => el.scrollIntoView(), 100);
+    }
+  }, []);
+
+  const nav = (id, label, cls = '') => (
+    <a href={'/' + id} className={`${active === id ? 'nav-active' : ''} ${cls}`}
+      onClick={e => { e.preventDefault(); scrollTo(id); }}>{label}</a>
+  );
 
   return (
     <nav className={`nav ${scrolled ? 'scrolled' : ''}`}>
       <div className="nav-inner">
         <ThemeToggle theme={theme} setTheme={setTheme}/>
-        <a href="#top" className="brand">
+        <a href="/" className="brand" onClick={e => { e.preventDefault(); window.scrollTo({top:0,behavior:'smooth'}); history.pushState(null,'','/'); }}>
           <img src="logo.png" alt="Shubh Express INC" className="brand-logo"/>
         </a>
         <div className="nav-links">
-          <a href="#about" className={active === 'about' ? 'nav-active' : ''}>About</a>
-          <a href="#services" className={active === 'services' ? 'nav-active' : ''}>Services</a>
-          <a href="#terminals" className={active === 'terminals' ? 'nav-active' : ''}>Terminals</a>
-          <a href="#contact" className={active === 'contact' ? 'nav-active' : ''}>Contact</a>
-          <a href="#privacy">Privacy</a>
-          <a href="#contact" className="nav-cta">Request Quote</a>
+          {nav('about', 'About')}
+          {nav('services', 'Services')}
+          {nav('terminals', 'Terminals')}
+          {nav('contact', 'Contact')}
+          {nav('privacy', 'Privacy')}
+          <a href="/contact" className="nav-cta" onClick={e => { e.preventDefault(); scrollTo('contact'); }}>Request Quote</a>
         </div>
       </div>
     </nav>
@@ -118,8 +143,8 @@ function Hero() {
           Owner-operated, terminal-credentialed, and built for the long haul.
         </p>
         <div className="hero-cta-row" style={{opacity: 0, animation: 'rise 0.8s ease 1.1s forwards'}}>
-          <a href="#contact" className="btn btn-primary">Request a Quote <span className="arrow"><Icon name="arrow" size={16}/></span></a>
-          <a href="#services" className="btn btn-ghost">View Services</a>
+          <a href="/contact" className="btn btn-primary" onClick={e=>{e.preventDefault();scrollTo('contact')}}>Request a Quote <span className="arrow"><Icon name="arrow" size={16}/></span></a>
+          <a href="/services" className="btn btn-ghost" onClick={e=>{e.preventDefault();scrollTo('services')}}>View Services</a>
         </div>
       </div>
       <div className="stats">
@@ -591,7 +616,7 @@ function Footer() {
       <div className="container">
         <div className="foot-grid">
           <div className="foot-col">
-            <a href="#top" className="brand">
+            <a href="/" className="brand" onClick={e => { e.preventDefault(); window.scrollTo({top:0,behavior:'smooth'}); history.pushState(null,'','/'); }}>
               <img src="logo.png" alt="Shubh Express INC" className="brand-logo brand-logo-footer"/>
             </a>
             <p className="foot-tag">
@@ -602,11 +627,11 @@ function Footer() {
           <div className="foot-col">
             <h5>Site</h5>
             <ul>
-              <li><a href="#about">About</a></li>
-              <li><a href="#services">Services</a></li>
-              <li><a href="#terminals">Terminals</a></li>
-              <li><a href="#contact">Contact</a></li>
-              <li><a href="#privacy">Privacy Policy</a></li>
+              <li><a href="/about" onClick={e=>{e.preventDefault();scrollTo('about')}}>About</a></li>
+              <li><a href="/services" onClick={e=>{e.preventDefault();scrollTo('services')}}>Services</a></li>
+              <li><a href="/terminals" onClick={e=>{e.preventDefault();scrollTo('terminals')}}>Terminals</a></li>
+              <li><a href="/contact" onClick={e=>{e.preventDefault();scrollTo('contact')}}>Contact</a></li>
+              <li><a href="/privacy" onClick={e=>{e.preventDefault();scrollTo('privacy')}}>Privacy Policy</a></li>
             </ul>
           </div>
           <div className="foot-col">
