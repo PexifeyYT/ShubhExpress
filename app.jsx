@@ -520,10 +520,7 @@ function Contact() {
                   <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
                 </span>
                 <span className="consent-text">
-                  <b>SMS consent (required).</b> By checking this box, I agree to receive text messages from
-                  Shubh Express INC. Message frequency varies. Message &amp; data rates may apply. Phone
-                  numbers collected for SMS purposes will not be shared with third parties or affiliates
-                  for marketing purposes under any circumstances.
+                  By checking this box, I agree to receive text messages from (Shubh express INC). Message frequency varies. Message &amp; data rates may apply. Phone numbers collected for SMS purposes will not be shared with third parties or affiliates for marketing purposes under any circumstances. Text HELP to + (209) 407-4107 for assistance. You can reply STOP to unsubscribe at any time. Please refer to our (privacy policy link)
                 </span>
               </label>
 
