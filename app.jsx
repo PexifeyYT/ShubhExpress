@@ -520,14 +520,14 @@ function Contact() {
                   <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
                 </span>
                 <span className="consent-text">
-                  By checking this box, I agree to receive text messages from (Shubh express INC). Message frequency varies. Message &amp; data rates may apply. Phone numbers collected for SMS purposes will not be shared with third parties or affiliates for marketing purposes under any circumstances. Text HELP to + (209) 407-4107 for assistance. You can reply STOP to unsubscribe at any time. Please refer to our (privacy policy link)
+                  By checking this box, I agree to receive text messages from (Shubh express INC). Message frequency varies. Message &amp; data rates may apply. Phone numbers collected for SMS purposes will not be shared with third parties or affiliates for marketing purposes under any circumstances. Text HELP to + (209) 407-4107 for assistance. You can reply STOP to unsubscribe at any time. Please refer to our <a href="privacy-policy.html" target="_blank" style={{color:'var(--blue)'}}>privacy policy</a>.
                 </span>
               </label>
 
               <input type="checkbox" name="botcheck" style={{display:'none'}} aria-hidden="true"/>
 
               <div className="form-actions">
-                <span className="legal">By submitting you agree to our privacy policy. We never share your data.</span>
+                <span className="legal">By submitting you agree to our <a href="privacy-policy.html" target="_blank" style={{color:'var(--blue)'}}>privacy policy</a>. We never share your data.</span>
                 <button className={`btn btn-primary ${shakeBtn ? 'shake' : ''}`} type="submit" disabled={loading}>
                   {loading ? 'Sending…' : <>Submit Quote <span className="arrow"><Icon name="arrow" size={16}/></span></>}
                 </button>
@@ -606,7 +606,7 @@ function Footer() {
               <li><a href="#services">Services</a></li>
               <li><a href="#terminals">Terminals</a></li>
               <li><a href="#contact">Contact</a></li>
-              <li><a href="#privacy">Privacy</a></li>
+              <li><a href="privacy-policy.html" target="_blank">Privacy Policy</a></li>
             </ul>
           </div>
           <div className="foot-col">
