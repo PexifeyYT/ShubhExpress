@@ -456,7 +456,6 @@ function Contact() {
                 <div>
                   <div className="c-k">Email</div>
                   <div className="c-v">
-                    <a href="mailto:info@shubhexpress.com">info@shubhexpress.com</a><br/>
                     <a href="mailto:dispatch@shubhexpress.com">dispatch@shubhexpress.com</a>
                   </div>
                 </div>
@@ -615,7 +614,6 @@ function Footer() {
             <ul>
               <li><a href="tel:+12094071504">+1 (209) 407-1504</a></li>
               <li><a href="tel:+12094255340">+1 (209) 425-5340</a></li>
-              <li><a href="mailto:info@shubhexpress.com">info@shubhexpress.com</a></li>
               <li><a href="mailto:dispatch@shubhexpress.com">dispatch@shubhexpress.com</a></li>
             </ul>
           </div>
