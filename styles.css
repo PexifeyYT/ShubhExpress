@@ -143,20 +143,12 @@ body.light .nav.scrolled { background: rgba(236,236,236,0.95); border-bottom-col
   display: flex; align-items: center; gap: 16px;
 }
 .brand { display: flex; align-items: center; gap: 12px; flex: 1; }
-.brand-mark {
-  width: 36px; height: 36px; display: grid; place-items: center;
-  background: var(--accent); color: var(--accent-text); border-radius: 6px;
-  font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 19px;
-  transform: skewX(-8deg); flex-shrink: 0;
-  transition: background .25s, color .25s;
+.brand-logo {
+  height: 44px; width: auto; display: block;
+  transition: opacity .2s;
 }
-.brand-mark span { transform: skewX(8deg); }
-.brand-name {
-  font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
-  font-size: 19px; text-transform: uppercase; letter-spacing: 0.02em;
-  line-height: 1; color: var(--fg); transition: color .25s;
-}
-.brand-name small { display: block; font-size: 10px; letter-spacing: 0.3em; color: var(--fg-mute); margin-top: 3px; transition: color .25s; }
+.brand-logo:hover { opacity: 0.85; }
+.brand-logo-footer { height: 56px; }
 .nav-links { display: flex; gap: 28px; align-items: center; }
 .nav-links a {
   font-family: 'Barlow Condensed', sans-serif; font-weight: 500;

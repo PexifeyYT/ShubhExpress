@@ -50,8 +50,7 @@ function Nav({ theme, setTheme }) {
       <div className="nav-inner">
         <ThemeToggle theme={theme} setTheme={setTheme}/>
         <a href="#top" className="brand">
-          <div className="brand-mark"><span>SE</span></div>
-          <div className="brand-name">Shubh Express<small>INC · USDOT 3320224</small></div>
+          <img src="logo.png" alt="Shubh Express INC" className="brand-logo"/>
         </a>
         <div className="nav-links">
           <a href="#about" className={active === 'about' ? 'nav-active' : ''}>About</a>
@@ -387,7 +386,7 @@ function Contact() {
     setError('');
     try {
       const payload = {
-        access_key: '3d35386a-df96-4952-82cf-54709ec937b4',
+        access_key: 'a393dae7-f268-4d08-ab92-1226a49e0e2b',
         subject: `New Quote Request — ${form.service} — ${form.name}`,
         from_name: 'Shubh Express Website',
         botcheck: '',
@@ -596,8 +595,7 @@ function Footer() {
         <div className="foot-grid">
           <div className="foot-col">
             <a href="#top" className="brand">
-              <div className="brand-mark"><span>SE</span></div>
-              <div className="brand-name">Shubh Express<small>INC · LATHROP, CA</small></div>
+              <img src="logo.png" alt="Shubh Express INC" className="brand-logo brand-logo-footer"/>
             </a>
             <p className="foot-tag">
               A West Coast drayage and intermodal carrier. Family-owned, port-cleared, and committed
